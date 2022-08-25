@@ -12,7 +12,7 @@ const cardDiv = document.getElementById('card-div');
 const profileButton = document.getElementById('uiShowProfile');
 const profileDiv = document.getElementById('profile-div');
 const readListButton = document.getElementById('uiShowList');
-const colorlistDiv = document.getElementById('colorlist-div');
+const listDiv = document.getElementById('colorlist-div');
 
 function showWelcomeMessage(username) {
     // Reconfiguring DOM elements
@@ -20,7 +20,7 @@ function showWelcomeMessage(username) {
     welcomeDiv.innerHTML = `Welcome ${username}`;
     signInButton.setAttribute('disabled', '');
     signOutButton.removeAttribute('disabled');
-    bannerImg.src = './images/flowChart2.png';
+    bannerImg.src = './images/banner_connected.png';
 }
 
 function update(data, endpoint) {
@@ -41,10 +41,10 @@ function update(data, endpoint) {
         profileDiv.appendChild(address);
     } else if (endpoint === gConfig.colorListMetaEndpoint) {
         console.log(data);
-        colorlistDiv.innerHTML = '';
+        listDiv.innerHTML = '';
         const title = document.createElement('p');
         title.innerHTML = `${data.displayName}, ${date}`;
-        colorlistDiv.appendChild(title);
+        listDiv.appendChild(title);
     }
 }
 

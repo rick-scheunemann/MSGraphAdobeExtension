@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Graph Access Test</title>
+  <link rel="SHORTCUT ICON" href="./favicon.svg" type="image/x-icon">
+</head>
+
+<body style="background:rgb(255, 255, 255)">
+  <div class="row" style="margin:auto">
+    <h5 class="card-title" id="WelcomeMessage">Enter text below to search the configured list</h5>
+    <input name="searchTxt" type="text" maxlength="32" id="uiSearchStr" class="searchField"/>
+    <button class="btn btn-primary" id="uiGetListData">Retrieve List Data</button>
+    <br>
+    <br>
+    <div>
+      Search Results:
+      <div id="uiSearchResult">
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

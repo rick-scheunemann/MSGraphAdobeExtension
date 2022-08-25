@@ -26,11 +26,10 @@ router.route('/token').get(async (req, res) => {
 });
 
 // Tester Routes
-router.route('/runTest')
-    .post(ctlr.runtTest);
+router.route('/getGraphData')
+    .post(ctlr.getGraphData);
 
 // End Express Routes //
-
 
 // CEP Event routing //
 

@@ -84,8 +84,8 @@
                     <Menu>Tester</Menu>
                     <Geometry>
                         <Size>
-                            <Height>480</Height>
-                            <Width>640</Width>
+                            <Height>300</Height>
+                            <Width>300</Width>
                         </Size>
                     </Geometry>
                     <Icons>
