@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ExtensionManifest Version="6.0" ExtensionBundleId="com.rps.msGraphAccess" ExtensionBundleVersion="1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ExtensionList>
+        <Extension Id="com.rps.server" Version="1.0" />
+        <Extension Id="com.rps.authorizer" Version="1.0" />
+        <Extension Id="com.rps.tester" Version="1.0" />
+    </ExtensionList>
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="ILST" Version="[25.0,99.9]" />
+        </HostList>
+        <LocaleList>
+            <Locale Code="All" />
+        </LocaleList>
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="10.0" />
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="com.rps.server">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./server/index.html</MainPath>
+                    <ScriptPath>./server/jsx/server.jsx</ScriptPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <Parameter>--mixed-context</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>false</AutoVisible>
+                    <StartOn>
+                        <Event>applicationActivate</Event>
+                    </StartOn>
+                </Lifecycle>
+                <UI>
+                    <Type>Custom</Type>
+                    <Geometry>
+                        <Size>
+                            <Height>1</Height>
+                            <Width>1</Width>
+                        </Size>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+        <Extension Id="com.rps.authorizer">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./authorizer/index.html</MainPath>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>Authorizer</Menu>
+                    <Geometry>
+                        <Size>
+                            <Height>480</Height>
+                            <Width>640</Width>
+                        </Size>
+                    </Geometry>
+                    <Icons>
+                        <Icon Type="Normal">./icons/authNm.png</Icon>
+                        <Icon Type="RollOver">./icons/authRO.png</Icon>
+                        <Icon Type="Disabled">./icons/authDis.png</Icon>
+                        <Icon Type="DarkNormal">./icons/authDkNm.png</Icon>
+                        <Icon Type="DarkRollOver">./icons/authDkRO.png</Icon>
+                    </Icons>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+        <Extension Id="com.rps.tester">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./tester/index.html</MainPath>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>Tester</Menu>
+                    <Geometry>
+                        <Size>
+                            <Height>480</Height>
+                            <Width>640</Width>
+                        </Size>
+                    </Geometry>
+                    <Icons>
+                        <Icon Type="Normal">./icons/authNm.png</Icon>
+                        <Icon Type="RollOver">./icons/authRO.png</Icon>
+                        <Icon Type="Disabled">./icons/authDis.png</Icon>
+                        <Icon Type="DarkNormal">./icons/authDkNm.png</Icon>
+                        <Icon Type="DarkRollOver">./icons/authDkRO.png</Icon>
+                    </Icons>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>
