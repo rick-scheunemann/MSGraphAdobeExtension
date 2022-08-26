@@ -21,42 +21,32 @@
   <div style="text-align:center">
     <img id="banner" src="./images/banner_disconnected.png">
   </div>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="text-align:center">
-    <a class="navbar-brand" href="/">Microsoft identity platform</a>
+  <nav style="text-align:center">
+    <a href="/">Microsoft identity platform</a>
     <br>
     <br>
-    <div class="btn-group ml-auto dropleft">
-      <button type="button" id="SignIn" class="btn btn-secondary">
+    <div>
+      <button type="button" id="SignIn">
         Sign In
       </button>
       <span> | </span>
-      <button type="button" id="SignOut" class="btn btn-secondary" disabled>
+      <button type="button" id="SignOut" disabled>
         Sign Out
       </button>
     </div>
   </nav>
   <div class="row" style="margin:auto">
-    <div id="card-div" class="col-md-3" style="display:none">
+    <div id="card-div" style="display:none">
       <div class="card text-center">
         <div class="card-body">
           <h5 class="card-title" id="WelcomeMessage">Please sign-in to allow extensions access to Microsoft data</h5>
           <br>
-          <button class="btn btn-primary" id="uiShowProfile">Show Profile Data</button>
+          <button id="uiShowProfile">Show Profile Data</button>
           <div id="profile-div"></div>
           <br>
-          <button class="btn btn-primary" id="uiShowList">Test List Access</button>
-          <div id="colorlist-div"></div>
+          <button id="uiShowList">Test List Access</button>
+          <div id="list-div"></div>
         </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="col-md-4">
-      <div class="list-group" id="list-tab" role="tablist">
-      </div>
-    </div>
-    <div class="col-md-5">
-      <div class="tab-content" id="nav-tabContent">
       </div>
     </div>
   </div>

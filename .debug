@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionList>
+    <Extension Id="com.rps.server">
+        <HostList>
+            <Host Name="ILST" Port="8765" />
+        </HostList>
+    </Extension>
+    <Extension Id="com.rps.authorize">
+        <HostList>
+            <Host Name="ILST" Port="8766" />
+        </HostList>
+    </Extension>
+    <Extension Id="com.rps.tester">
+        <HostList>
+            <Host Name="ILST" Port="8767" />
+        </HostList>
+    </Extension>
+</ExtensionList>

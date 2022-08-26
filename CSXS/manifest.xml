@@ -2,7 +2,7 @@
 <ExtensionManifest Version="6.0" ExtensionBundleId="com.rps.msGraphAccess" ExtensionBundleVersion="1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <ExtensionList>
         <Extension Id="com.rps.server" Version="1.0" />
-        <Extension Id="com.rps.authorizer" Version="1.0" />
+        <Extension Id="com.rps.authorize" Version="1.0" />
         <Extension Id="com.rps.tester" Version="1.0" />
     </ExtensionList>
     <ExecutionEnvironment>
@@ -44,7 +44,7 @@
                 </UI>
             </DispatchInfo>
         </Extension>
-        <Extension Id="com.rps.authorizer">
+        <Extension Id="com.rps.authorize">
             <DispatchInfo>
                 <Resources>
                     <MainPath>./authorizer/index.html</MainPath>
@@ -54,7 +54,7 @@
                 </Lifecycle>
                 <UI>
                     <Type>Panel</Type>
-                    <Menu>Authorizer</Menu>
+                    <Menu>Authorize</Menu>
                     <Geometry>
                         <Size>
                             <Height>480</Height>

@@ -30,7 +30,7 @@ function uiShowProfile() {
 function uiShowListMeta() {
     msalS.getTokenRedirect(tokenRequest)
         .then((response) => {
-            callMSGraph(gConfig.colorListMetaEndpoint, response.accessToken, false, ui.update);
+            callMSGraph(gConfig.listMetaEndpoint, response.accessToken, false, ui.update);
         }).catch((error) => {
             console.error(error);
         });

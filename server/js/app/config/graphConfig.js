@@ -1,7 +1,7 @@
 const msGraph = 'https://graph.microsoft.com/v1.0';
 
 const ids = {
-    site: '',
+    site: '', // sharepoint site where list resides
     list: '',
 };
 
@@ -12,14 +12,14 @@ const graphConfig = {
         url: `${msGraph}/me`,
         target: '',
     },
-    colorListMetaEndpoint: {
+    listMetaEndpoint: {
         url: `${msGraph}/sites/${ids.site}/lists/${ids.list}`,
         target: '',
     },
-    colorListItemEndpoint: {
+    listItemEndpoint: {
         url: `${msGraph}/sites/${ids.site}/lists/${ids.list}/items?`,
         batchUrl: `/sites/${ids.site}/lists/${ids.list}/items?`,
-        target: 'msColorRes',
+        target: 'msListRes',
     },
 };
 

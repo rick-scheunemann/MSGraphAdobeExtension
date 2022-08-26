@@ -8,16 +8,15 @@ import { graphDispatch } from './cepDispatch.js';
 import { getTokenRedirect } from './msalSetup.js';
 
 function getListItems(req) {
-    // req.data is array of arrays of format [["c", "ink name"], [...], ...]
-    // console.log(req.data);
+    // req.data is array of strings
+    console.log(req.data);
 
-    const endpoint = gConfig.colorListItemEndpoint;
+    const endpoint = gConfig.listItemEndpoint;
 
     // use provided data, request info in batch(limit 20 calls in batch...)
 
-    // const fields = 'fields'; // request all fields
-    const fields = 'fields($select=title)'; // request title only
-    // const fields = 'fields($select=title,field_2,field_3)' // request multiple fields
+    const fields = 'fields'; // request all fields
+    // const fields = 'fields($select=title,field_2,field_3)' // request only some fields
 
     const headers = {
         Prefer: 'HonorNonIndexedQueriesWarningMayFailRandomly',
@@ -30,7 +29,7 @@ function getListItems(req) {
         requests.push({
             id: `${index}_${e[1]}`,
             method: 'GET',
-            url: `${endpoint.batchUrl}$expand=${fields}&$filter=fields/Title eq '${e[1]}'`,
+            url: `${endpoint.batchUrl}$expand=${fields}&$filter=fields/Title eq '${e}'`,
             headers,
         });
     });
@@ -62,7 +61,7 @@ function getListItems(req) {
     // getTokenRedirect(tokenRequest)
     //     .then((response) => {
     //         callMSGraph(
-    //             gConfig.colorListItemEndpoint,
+    //             gConfig.listItemEndpoint,
     //             response.accessToken,
     //             options,
     //             graphDispatch,

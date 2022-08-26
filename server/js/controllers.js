@@ -9,22 +9,24 @@ const ms = require('./graphPromise');
 // Tester Extension //
 
 const makeRequest = async function (req, callback) {
+    // in this implementation, we are only requesting a single item
+    // but multiple search strings are supported in array passed to graphPromise
+
     const { searchStr } = req.body;
 
-    // retrieve color data from ms graph
+    // retrieve list data from ms graph
     const timeoutError = Symbol('wait time has expired');
     let graphRes;
     try {
         graphRes = await ms.timeout(
-            ms.graphPromise('msList', searchStr, 'com.rps.server.msListRes'),
+            ms.graphPromise('msList', [searchStr], 'com.rps.server.msListRes'),
             5000, // 5 second timeout
             timeoutError,
         );
     } catch (e) {
         if (e === timeoutError) { // handle timeout
-            // console.log('timeout error');
             await cep.evalScriptPr(
-                'alert_User_Multiline("|) Marker - Timout Error", ["The required resource is unavailable.", "Please confirm you are logged in using the Authorizer panel"], "OK")',
+                'alert_User_Multiline("|) Marker - Timout Error", ["The required resource is unavailable.", "Please confirm you are logged in using the Authorize panel"], "OK")',
             );
             return callback('evalRes timeout');
         }
@@ -35,20 +37,24 @@ const makeRequest = async function (req, callback) {
     console.log('graphRes');
     console.log(graphRes);
 
+    // format the response from MS Graph here
+    // since we batch Graph requests, each has its own response
     const resultArr = graphRes.data.responses.reduce((res, e) => {
         if (e.status === 200 && e.body.value.length > 0) {
+            // here we could filter out unneeded field values
+            // or act upon them before responding
             const f = e.body.value[0].fields;
-            res.push({
-                name: f.Title,
-            });
+            res.push(f);
         }
         return res;
     }, []);
 
-    return {
+    console.log(resultArr);
+
+    return callback({
         status: 'ok',
-        payload: resultArr,
-    };
+        payload: JSON.stringify(resultArr),
+    });
 };
 
 const getGraphData = function (req, res) {

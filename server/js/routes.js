@@ -35,14 +35,14 @@ router.route('/getGraphData')
 
 // listen for events from Illustrator:
 cep.csi.addEventListener('documentAfterActivate', ctlr.routeEvent);
-console.log('His timeless sleep has been upset by documentAfterActivate events');
+console.log('listening for documentAfterActivate events');
 // documentAfterActivate is sent after a previously unsaved doc is saved.
 // documentAfterActivate is sent after a saved doc is saved as a new file(different name).
 // when multiple docs are opened at once, documentAfterActivate is sent for the last doc only.
 // no documentAfterActivate is sent when a doc not in focus is closed.
 
 cep.csi.addEventListener('documentAfterDeactivate', ctlr.routeEvent);
-console.log('documentAfterDeactivate events begin the summoning');
+console.log('listening for documentAfterDeactivate events');
 // starting with Ai v24.2.1 documentAfterActivate with event.data xml outer
 // tag of documentAfterDeactivate is no longer sent when last doc is closed.
 // we now listen for documentAfterDeactivate to know when to display "no open document".

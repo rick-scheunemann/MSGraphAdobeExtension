@@ -12,7 +12,7 @@ const cardDiv = document.getElementById('card-div');
 const profileButton = document.getElementById('uiShowProfile');
 const profileDiv = document.getElementById('profile-div');
 const readListButton = document.getElementById('uiShowList');
-const listDiv = document.getElementById('colorlist-div');
+const listDiv = document.getElementById('list-div');
 
 function showWelcomeMessage(username) {
     // Reconfiguring DOM elements
@@ -39,7 +39,7 @@ function update(data, endpoint) {
         profileDiv.appendChild(email);
         profileDiv.appendChild(phone);
         profileDiv.appendChild(address);
-    } else if (endpoint === gConfig.colorListMetaEndpoint) {
+    } else if (endpoint === gConfig.listMetaEndpoint) {
         console.log(data);
         listDiv.innerHTML = '';
         const title = document.createElement('p');
