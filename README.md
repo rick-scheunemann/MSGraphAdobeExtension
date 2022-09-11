@@ -1,3 +1,4 @@
+<img width="842" alt="MSGraphAdobeExtension" src="https://user-images.githubusercontent.com/108314612/189532062-9b10b79c-8c0a-4dfa-a9c3-2b5eb273bae0.png">
 # MSGraphAdobeExtension
 Adobe Illustrator extension panels for Microsoft identity platform login and calling Microsoft Graph API
 
