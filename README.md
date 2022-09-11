@@ -14,7 +14,7 @@ The extension consists of 3 parts:
 Microfoft Code is adapted from [here](https://github.com/Azure-Samples/ms-identity-javascript-v2)
 
 ## Setup
-1) [Setup your SPA registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-app-registration). The redirect URI used is http://localhost:8764/token, and can be changed in authConfig.js.
+1) [Setup your SPA registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-spa-app-registration). The redirect URI used is localhost:8764/token, and can be changed in authConfig.js.
 2) Clone the repository into your [Adobe extensions folder](https://github.com/Adobe-CEP/CEP-Resources/blob/master/CEP_11.x/Documentation/CEP%2011.1%20HTML%20Extension%20Cookbook.md#extension-folders).
 3) Run 'npm install' in the /server/js/ directory.
 4) Enter your client id, tenant id, and redirectUri in authConfig.js.
